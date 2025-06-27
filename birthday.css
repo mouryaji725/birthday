@@ -579,3 +579,80 @@
 .star:hover {
   transform: scale(1.3);
 }
+.review-card {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 20px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 10px rgba(255, 182, 193, 0.5);
+  max-width: 500px;
+  margin: 20px auto;
+}
+
+.review-card label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: bold;
+  color: #fff;
+}
+
+.star-rating {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.star-rating .star {
+  font-size: 30px;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.star-rating .star:hover {
+  transform: scale(1.2);
+  color: gold;
+}
+
+.review-card input, .review-card textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 6px 0 12px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  font-size: 16px;
+}
+
+.review-card textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.review-card .btn-group {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.review-card button {
+  flex: 1;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #ff69b4;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.review-card button:hover {
+  background: #ff1493;
+}
+
+.error-message {
+  color: #ff8080;
+  font-size: 14px;
+  display: none;
+  margin-top: -5px;
+}
