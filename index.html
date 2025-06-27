@@ -68,14 +68,15 @@
   <footer>
     <p>Forever and always yours as a friend ❤️</p>
   </footer>
-  <section class="wishbox" style="margin-top: 30px;">
-    <button class="wish-btn" onclick="openReviewDialog()">📝 Give Your Review</button>
-  </section>
+<!-- Review button under iframe -->
+<section class="wishbox" style="margin-top: 30px;">
+  <button class="wish-btn" onclick="openReviewDialog()">📝 Give Your Review</button>
+</section>
+
 </div>
 
-<!-- Review button directly under iframe -->
-
-  <div class="dialog" id="reviewDialog">
+<!-- Review Dialog hidden initially -->
+<div class="dialog" id="reviewDialog">
   <h2>We’d Love Your Feedback 💖</h2>
   <div class="review-card">
     <form id="reviewForm">
@@ -103,8 +104,6 @@
     </form>
   </div>
 </div>
-      
-
 
 <div class="thank-you" id="reviewThankPopup">
   <h2>💖 Thanks for your Feedback!</h2>
