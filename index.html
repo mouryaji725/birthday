@@ -75,9 +75,10 @@
 
 <!-- Review button directly under iframe -->
 <section class="wishbox" style="margin-top: 30px;">
-  
-    <h2>We’d love your feedback 💖</h2>
+  <h2>We’d Love Your Feedback 💖</h2>
+  <div class="review-card">
     <form id="reviewForm">
+      <label>How many stars would you give? ⭐</label>
       <div class="star-rating" id="starRating">
         <span class="star" data-value="1">⭐</span>
         <span class="star" data-value="2">⭐</span>
@@ -85,11 +86,17 @@
         <span class="star" data-value="4">⭐</span>
         <span class="star" data-value="5">⭐</span>
       </div>
-      <input type="text" id="likeInput" placeholder="Did you like it? (Yes/No)" required>
-      <input type="text" id="suggestionInput" placeholder="Any advice you'd like to give?" required>
+
+      <label for="likeInput">Did you like it? 🎀</label>
+      <input type="text" id="likeInput" placeholder="Yes / No" required>
+
+      <label for="suggestionInput">Any Advice for Me? 💌</label>
+      <textarea id="suggestionInput" placeholder="Your suggestions here..." required></textarea>
+
       <div id="reviewError" class="error-message">Please fill all fields correctly ✨</div>
+
       <div class="btn-group">
-        <button type="submit">Send Review</button>
+        <button type="submit">✨ Send Review</button>
         <button type="button" onclick="closeReviewDialog()">Cancel</button>
       </div>
     </form>
