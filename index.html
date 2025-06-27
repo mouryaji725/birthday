@@ -1,15 +1,13 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Happy Birthday Aryan 🎉💖</title>
-<link rel="stylesheet" href="birthday.css">
+  <link rel="stylesheet" href="birthday.css">
 </head>
 <body>
 
-<!-- <button id="musicBtn">Play Music 🎶</button> -->
 <audio id="bgMusic" src="birthday.mp3" autoplay loop></audio>
 
 <header>
@@ -27,16 +25,16 @@
   <span style="--i:5">On this day you were born,</span><br/>
   <span style="--i:6">And our world was adorned 💖</span>
 </div>
+
 <section class="sayari">
   <button onclick="showShayari()">🎉 Show Birthday Shayari</button>
-
-  <!-- Popup -->
   <div class="overlay" id="overlay"></div>
   <div class="popup" id="popup">
     <p id="shayariText">Shayari here</p>
     <button onclick="closePopup()">Close</button>
   </div>
 </section>
+
 <section class="quote-section">
   <h2>Heartfelt Wishes</h2>
   <div class="quote">"You're the sparkle in my days and calm in my nights."</div>
@@ -46,235 +44,66 @@
 
 <section class="wishbox">
   <button class="wish-btn" onclick="openDialog()">💖 Send Your Wish</button>
-
   <div class="dialog" id="wishDialog">
-  <h2>Aryan, what is your wish?</h2>
-  <input type="text" id="wishInput" placeholder="Write your wish here 💝">
-  <div id="errorMsg" class="error-message">Please enter a wish before sending 💌</div>
-  <div class="btn-group">
-    <button onclick="sendWish()">Send</button>
-    <button onclick="closeDialog()">Cancel</button>
+    <h2>Aryan, what is your wish?</h2>
+    <form id="wishForm">
+      <input type="text" id="wishInput" placeholder="Write your wish here 💝" required>
+      <div id="errorMsg" class="error-message">Please enter a wish before sending 💌</div>
+      <div class="btn-group">
+        <button type="submit">Send</button>
+        <button type="button" onclick="closeDialog()">Cancel</button>
+      </div>
+    </form>
   </div>
+</section>
+
+<div class="thank-you" id="thankPopup">
+  <h2>🎉 Thank You!</h2>
+  <p>We’ll try to fulfill your wishes 💖</p>
 </div>
 
-  <div class="thank-you" id="thankPopup">
-    <h2>🎉 Thank You!</h2>
-    <p>We’ll try to fulfill your wishes 💖</p>
-  </div>
-
-  <script>
-    (function(){
-      emailjs.init("ctc7D7VSbXAmypaMR");  // <-- Replace with your EmailJS User ID
-    })();
-
-    function openDialog() {
-      document.getElementById("wishDialog").classList.add("show");
-    }
-
-    function closeDialog() {
-      document.getElementById("wishDialog").classList.remove("show");
-    }
-
-   function sendWish() {
-  const wish = document.getElementById("wishInput").value.trim();
-  const errorMsg = document.getElementById("errorMsg");
-
-  if (wish === "") {
-    errorMsg.style.display = "block";
-    return;
-  }
-
-  errorMsg.style.display = "none";
-
-  emailjs.send("service_du9iklm", "template_3k20n94", {
-    to_email: "aryanmarya2501@gmail.com",
-    message: wish
-  })
-  .then(() => {
-    document.getElementById("wishDialog").classList.remove("show");
-    document.getElementById("wishInput").value = "";
-    showThankYou();
-  }, (error) => {
-    alert("Failed to send your wish. Please try again.");
-  });
-}
-
-    function showThankYou() {
-      const thankPopup = document.getElementById("thankPopup");
-      thankPopup.classList.add("show");
-      setTimeout(() => {
-        thankPopup.classList.remove("show");
-      }, 3500);
-    }
-  </script>
-
-</section>
 <h1 class="gallery_head">🌸 Mouryaji's Insta Moments 🌸</h1>
 <div class="romantic-frame">
-    <!-- Replace 'yourpage.html' with your actual HTML file URL or path -->
-    <iframe src="gallery.html"></iframe>
-<footer><p>Forever and always yours as a friend ❤️</p></footer>
-<section class="wishbox" style="margin-top: 30px;">
-  <button class="wish-btn" onclick="openReviewDialog()">📝 Give Your Review</button>
-</section>
-<div class="dialog" id="reviewDialog">
-  <h2>We’d love your feedback 💖</h2>
-
-<!-- <h3>Hope you like it ! </h3>
-<h5>Aur ha jada mat sochio maine ye sab tere liye kyu banaya ,Bss aise hi mnn kiya isliye</h5>
-<h4>We are just friends only !!</h4>
-<p>i was trying to make my first project after a long time yaad aaya your birthday is coming , <br>so i tried this khud se aur ai ki help se </p>
-<p>Vaise mai yhi kkr rha hu aaj kl tune puchha tha na mtlb sikh rha hu ye aata tha bhul gya tha</p> -->
-
-  <div class="star-rating" id="starRating">
-    <span class="star" data-value="1">⭐</span>
-    <span class="star" data-value="2">⭐</span>
-    <span class="star" data-value="3">⭐</span>
-    <span class="star" data-value="4">⭐</span>
-    <span class="star" data-value="5">⭐</span>
-  </div>
-
-  <input type="text" id="likeInput" placeholder="Did you like it? (Yes/No)">
-  <input type="text" id="suggestionInput" placeholder="Any advice which you want to give ?">
-
-  <div id="reviewError" class="error-message">Please fill all fields correctly ✨</div>
-
-  <div class="btn-group">
-    <button onclick="sendReview()">Send Review</button>
-    <button onclick="closeReviewDialog()">Cancel</button>
-  </div>
+  <iframe src="gallery.html" style="width:100%; height:600px; border:none;"></iframe>
+  <footer>
+    <p>Forever and always yours as a friend ❤️</p>
+  </footer>
+  <section class="wishbox" style="margin-top: 30px;">
+    <button class="wish-btn" onclick="openReviewDialog()">📝 Give Your Review</button>
+  </section>
 </div>
 
+<!-- Review button directly under iframe -->
+<section class="wishbox" style="margin-top: 30px;">
+  <button class="wish-btn" onclick="openReviewDialog()">📝 Give Your Review</button>
+  <div class="dialog" id="reviewDialog">
+    <h2>We’d love your feedback 💖</h2>
+    <form id="reviewForm">
+      <div class="star-rating" id="starRating">
+        <span class="star" data-value="1">⭐</span>
+        <span class="star" data-value="2">⭐</span>
+        <span class="star" data-value="3">⭐</span>
+        <span class="star" data-value="4">⭐</span>
+        <span class="star" data-value="5">⭐</span>
+      </div>
+      <input type="text" id="likeInput" placeholder="Did you like it? (Yes/No)" required>
+      <input type="text" id="suggestionInput" placeholder="Any advice you'd like to give?" required>
+      <div id="reviewError" class="error-message">Please fill all fields correctly ✨</div>
+      <div class="btn-group">
+        <button type="submit">Send Review</button>
+        <button type="button" onclick="closeReviewDialog()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</section>
 
-<script>
-  let selectedStars = 0;
 
-// Set up star click listeners
-document.querySelectorAll(".star").forEach(star => {
-  star.addEventListener("click", () => {
-    selectedStars = star.getAttribute("data-value");
-    updateStarDisplay(selectedStars);
-  });
-});
 
-function updateStarDisplay(rating) {
-  document.querySelectorAll(".star").forEach(star => {
-    star.classList.remove("selected");
-    if (star.getAttribute("data-value") <= rating) {
-      star.classList.add("selected");
-    }
-  });
-}
+<div class="thank-you" id="reviewThankPopup">
+  <h2>💖 Thanks for your Feedback!</h2>
+  <p>Your words mean a lot ✨<br>Stay awesome, Mourya ji!</p>
+</div>
 
-  const countdownEl = document.getElementById('countdown');
-  const targetDate = new Date('June 29, 2025 00:00:00').getTime();
-  function updateCountdown() {
-    const now = new Date().getTime();
-    const distance = targetDate - now;
-    if (distance < 0) {
-      countdownEl.innerHTML = "🎉 It's your special day! Happy Birthday 🎂";
-      return;
-    }
-    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
-    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    const s = Math.floor((distance % (1000 * 60)) / 1000);
-    countdownEl.innerHTML = `Countdown: ⏳ ${d}d ${h}h ${m}m ${s}s`;
-  }
-  setInterval(updateCountdown, 1000);
-  updateCountdown();
-
-  // Music button
-  // const musicBtn = document.getElementById("musicBtn");
-  // const bgMusic = document.getElementById("bgMusic");
-  // musicBtn.onclick = () => { bgMusic.play(); };
-document.addEventListener('DOMContentLoaded',function () {
-  const audio = document.getElementById("bgMusic");
-  const playmusic = () => {
-    audio.play().catch(() => {
-      document.addEventListener("click", () => audio.play(), {once : true});
-    });
-  };
-  playmusic();
-});
-
-  // Floating emojis
-  setInterval(() => {
-    const heart = document.createElement("div");
-    heart.className = "heart";
-    heart.style.left = Math.random() * 100 + "vw";
-    heart.innerText = "💖";
-    document.body.appendChild(heart);
-    setTimeout(() => heart.remove(), 5000);
-  }, 600);
-  const shayariList = [
-      "🎂 जन्मदिन की ढेर सारी शुभकामनाएँ! तेरे चेहरे की ये मुस्कान यूं ही बनी रहे। 💖",
-      "🎉 तेरे इस खास दिन पर दुआ है, तू यूं ही हँसता रहे और खुशियों से भरा रहे। 🥳",
-      "🌸 खुश रहो तुम हमेशा ज़िंदगी में, तुम्हारे बिना अधूरी है हमारी महफ़िल। 🎈",
-      "💖 जन्मदिन की मिठास हो तेरी हर बात में, यूं ही महकता रहे तेरा जहाँ। 🎂",
-      "🎁 भगवान करे हर दुआ कबूल हो तेरी, ज़िंदगी में बस प्यार और खुशियां हों भरी। 🥰"
-    ];
-
-    function showShayari() {
-      const randomIndex = Math.floor(Math.random() * shayariList.length);
-      const shayari = shayariList[randomIndex];
-      document.getElementById("shayariText").textContent = shayari;
-
-      document.getElementById("overlay").classList.add("show");
-      const popup = document.getElementById("popup");
-      popup.classList.add("show");
-    }
-
-    function closePopup() {
-      const popup = document.getElementById("popup");
-      popup.classList.remove("show");
-      document.getElementById("overlay").classList.remove("show");
-    }
-    function openReviewDialog() {
-  document.getElementById("reviewDialog").classList.add("show");
-}
-
-function closeReviewDialog() {
-  document.getElementById("reviewDialog").classList.remove("show");
-}
-function sendReview() {
-  const liked = document.getElementById("likeInput").value.trim();
-  const suggestion = document.getElementById("suggestionInput").value.trim();
-  const error = document.getElementById("reviewError");
-
-  if (selectedStars === 0 || liked === "" || suggestion === "") {
-    error.style.display = "block";
-    return;
-  }
-
-  error.style.display = "none";
-
-  emailjs.send("service_du9iklm", "template_zw0rrav", {
-    to_email: "aryanmarya2501@gmail.com",
-    message: `⭐ Stars: ${selectedStars}\n👍 Liked: ${liked}\n💌 Suggestion: ${suggestion}`
-  })
-  .then(() => {
-    document.getElementById("reviewDialog").classList.remove("show");
-    selectedStars = 0;
-    updateStarDisplay(0);
-    document.getElementById("likeInput").value = "";
-    document.getElementById("suggestionInput").value = "";
-    showThankYou();
-  }, (error) => {
-    alert("Failed to send your review. Please try again.");
-  });
-}
-// Push an initial state to trap the back button
-history.pushState(null, null, location.href);
-
-// Listen for back button (popstate event)
-window.addEventListener("popstate", function (event) {
-  openReviewDialog();
-  // Push another state so back button doesn't exit the page
-  history.pushState(null, null, location.href);
-});
-
-</script>
-
+<script src="birthday.js"></script>
 </body>
 </html>
