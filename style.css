@@ -88,7 +88,7 @@
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 4px 20px #ff408180;
-      
+      z-index: 5;
     }
     .btn:hover {
       transform: scale(1.05);
@@ -246,10 +246,13 @@
       font-size: 16px;
       cursor: pointer;
       margin: 0 5px;
+    z-index: 5;
     }
 
     .dialog button:hover {
       background: #7d0537;
+         transform: scale(1.05);
+      box-shadow: 0 4px 25px #ff4081a0;
     }
 
     .thank-you {
