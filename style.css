@@ -88,7 +88,7 @@
       cursor: pointer;
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 4px 20px #ff408180;
-      
+      z-index: 5;
     }
     .btn:hover {
       transform: scale(1.05);
@@ -246,6 +246,7 @@
       font-size: 16px;
       cursor: pointer;
       margin: 0 5px;
+      z-index: 5;
     }
 
     .dialog button:hover {
@@ -302,6 +303,7 @@
 }
 
         .wish-btn {
+          cursor: pointer;
      margin: 30px auto;
       padding: 15px 30px;
       background: linear-gradient(to right, #ff4081, #ff9800);
@@ -309,13 +311,15 @@
       border: none;
       border-radius: 30px;
       font-size: 1.2rem;
-      cursor: pointer;
+      z-index: 5;
       transition: transform 0.3s, box-shadow 0.3s;
       box-shadow: 0 4px 20px #ff408180;
     }
 
     .wish-btn:hover {
       background: #ff3399;
+      transform: scale(1.05);
+      box-shadow: 0 4px 25px #ff4081a0;
     }
  .wishbox {
     
@@ -441,5 +445,8 @@ position: relative;
 display: flex;
 align-items: center;
 justify-content: center;
+    }
+    button{
+      cursor: pointer;
     }
   
