@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+  
+  
+
+    <div class="stars"></div>
+    <div id="balloon-container"></div>
+    <section class="header">
+        <h1 class="heading">
+            Happy Birthday Megha Bhootni 
+        </h1>
+        <p>Wish you a very very happy Birthday</p>
+    </section>
+
+    <div class="countdown" id="countdown">
+<div class="time-box" id="days">0<div class="label">Days</div></div>
+  <div class="time-box" id="hours">0<div class="label">Hours</div></div>
+  <div class="time-box" id="minutes">0<div class="label">Minutes</div></div>
+  <div class="time-box" id="seconds">0<div class="label">Seconds</div></div>
+   <h3 id="time-content"></h3>
+</div>
+  
+<p class="lyrics">"Tera chehra kitna suhana lagta hai, bada pyaara bada mastana lagta hai..." 🎶</p>
+
+<div class="sayari-container">
+  <button class="btn" onclick="openPopup()">💖 Click for a Shayari 💖</button>
+</div>
+
+<div class="popup" id="popup">
+  <div class="popup-content">
+    <h2>For My Friend ✨</h2>
+    <p id="shayari">Teri dosti mein hum kuch khaas kar jayenge...</p>
+    <button class="close-btn" onclick="closePopup()">Close</button>
+  </div>
+</div>
+
+
+    
+    <div class="quote">
+      <p>"Dost sirf naam ka nahi hota, jo kabhi saath na chhode wahi asli dost hota hai."</p>
+    </div>
+<section class="quotes">
+  <h2>Heartfelt Wishes</h2>
+  <div class="quote">"You're the sparkle in my days and calm in my nights."</div>
+  <div class="quote">"Each year with you is a priceless gift."</div>
+  <div class="quote">"May your heart be as light as balloons and full as cake!"</div>
+</section>
+
+
+    <section class="wishbox">
+  <button class="wish-btn" onclick="openDialog()">💖 Send Your Wish</button>
+  <div class="dialog" id="wishDialog">
+    <h2>Aur Bhootni , jaldi btao wish apni ?</h2>
+    <form id="wishForm">
+      <input type="text" id="wishInput" placeholder="Write your wish here 💝" >
+      <div id="errorMsg" class="error-message">Please enter a wish before sending 💌</div>
+      <div class="btn-group">
+        <button type="submit">Send</button>
+        <button type="button" onclick="closeDialog()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</section>
+<div class="thank-you" id="thankPopup">
+  <h2>🎉 Thank You!</h2>
+  <p>We’ll try to fulfill your wishes 💖</p>
+</div>
+    <h1 class="gallery_head">🌸Your Moments 🌸</h1>
+<div class="romantic-frame">
+  <iframe src="HAPPY-BIRTHDAY-V5-main\love\index.html" style="width:100%; height:600px; border:none;"></iframe>
+  <footer>
+    <p>Forever and always yours as a friend ❤️</p>
+  </footer>
+  <section class="wishbox" style="margin-top: 30px;">
+    <button class="wish-btn" onclick="openReviewDialog()">📝 Give Your Review</button>
+  </section>
+</div>
+
+  <div class="dialog" id="reviewDialog">
+    <h2>We’d love your feedback 💖</h2>
+    <form id="reviewForm">
+      <div class="star-rating" id="starRating">
+        <span class="star" data-value="1">⭐</span>
+        <span class="star" data-value="2">⭐</span>
+        <span class="star" data-value="3">⭐</span>
+        <span class="star" data-value="4">⭐</span>
+        <span class="star" data-value="5">⭐</span>
+      </div>
+      <input type="text" id="likeInput" placeholder="Did you like it? (Yes/No)" required>
+      <input type="text" id="suggestionInput" placeholder="Any advice you'd like to give?" required>
+      <div id="reviewError" class="error-message">Please fill all fields correctly ✨</div>
+      <div class="btn-group">
+        <button type="submit">Send Review</button>
+        <button type="button" onclick="closeReviewDialog()">Cancel</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+
+
+<div class="thank-you" id="reviewThankPopup">
+  <h2>💖 Thanks for your Feedback!</h2>
+  <p>Your words mean a lot ✨<br>Stay awesome, Mourya ji!</p>
+</div>
+<div class="rakhi">
+  <img src="red.png" alt="" srcset="">
+</div>
+<script src="script.js"></script>
+
+</body>
+</html>
